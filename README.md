@@ -8,3 +8,5 @@ Sesuaikan URL sesuai dengan lokasi localhost
 
 2. Ganti Database di cood/appCood/config/database.php
 Sesuaikan dengan username dan nama database
+
+3. Akses Admin [localhost BASE URL]/cood-admin/
