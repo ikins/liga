@@ -10,3 +10,6 @@ Sesuaikan URL sesuai dengan lokasi localhost
 Sesuaikan dengan username dan nama database
 
 3. Akses Admin [localhost BASE URL]/cood-admin/
+
+4. user : admin@ligaindramayu.co
+pass : admin
