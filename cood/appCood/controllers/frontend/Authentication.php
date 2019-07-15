@@ -128,7 +128,7 @@ class Authentication extends CI_Controller {
 		$is_admin_cood = $this->session->userdata('is_admin_cood'); //variable id login
 		if(!isset($is_admin_cood) || $is_admin_cood != true) //cek sedang sudah login apa belum
 		{
-			$data['title'] = 'Liga Indramayu Administrator Login ';						
+			$data['title'] = 'Liga Indramayu Administrator Login';						
 			$data['main_content'] = 'frontend/auth/cood-admin';
 			$this->load->view('template/frontend/aloneview', $data);
 		}
@@ -152,7 +152,7 @@ class Authentication extends CI_Controller {
 		
 		if($this->form_validation->run() == false)
 		{	
-			$data['title'] = 'Liga Login';						
+			$data['title'] = 'Liga Indramayu Administrator Login';						
 			$data['main_content'] = 'frontend/auth/cood-admin';
 			$this->load->view('template/frontend/aloneview', $data);
 		}
@@ -160,7 +160,7 @@ class Authentication extends CI_Controller {
 		{
 			
 			$email = $this->input->post('email');
-			$password = $this->input->post('password');
+			$password = md5($this->input->post('password'));
 			$date = date('Y-m-d');
 
 						
@@ -182,26 +182,26 @@ class Authentication extends CI_Controller {
 				if($email_user != $email)
 				{
 			
-					$data['title'] = 'Liga Login';						
+					$data['title'] = 'Liga Indramayu Administrator Login';						
 					$data['error'] = 'email "'.$email.'" Belum Terdaftar atau Belum Terverifikasi';
-					$data['main_content'] = 'home/cood-admin';
-					$this->load->view('template/home/aloneview', $data);
+					$data['main_content'] = 'frontend/auth/cood-admin';
+					$this->load->view('template/frontend/aloneview', $data);
 				}		
 				elseif ($password_user != $password) 						
 				{
 
-					$data['title'] = 'Liga Login';						
+					$data['title'] = 'Liga Indramayu Administrator Login';						
 					$data['error'] = 'Password Salah';
-					$data['main_content'] = 'home/cood-admin';
-					$this->load->view('template/home/aloneview', $data);
+					$data['main_content'] = 'frontend/auth/cood-admin';
+					$this->load->view('template/frontend/aloneview', $data);
 				}
 				elseif ($status != 'Y') 						
 				{
 
-					$data['title'] = 'Liga Login';						
+					$data['title'] = 'Liga Indramayu Administrator Login';						
 					$data['error'] = 'email Anda Tidak Terdaftar';
-					$data['main_content'] = 'home/cood-admin';
-					$this->load->view('template/home/aloneview', $data);
+					$data['main_content'] = 'frontend/auth/cood-admin';
+					$this->load->view('template/frontend/aloneview', $data);
 
 				}						
 				elseif ( ($email_user == $email) and ($password_user == $password) and ($status == 'Y') )
@@ -223,10 +223,10 @@ class Authentication extends CI_Controller {
 				
 			}else {
 
-					$data['title'] = 'Liga Login';						
+					$data['title'] = 'Liga Indramayu Administrator Login';						
 					$data['error'] = 'email "'.$email.'"  Belum Terdaftar atau Belum Terverifikasi';
-					$data['main_content'] = 'home/cood-admin';
-					$this->load->view('template/home/aloneview', $data);
+					$data['main_content'] = 'frontend/auth/cood-admin';
+					$this->load->view('template/frontend/aloneview', $data);
 			}
 		}
 	}
